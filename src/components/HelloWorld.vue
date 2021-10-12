@@ -32,9 +32,7 @@ export default {
     },
     computed: {
         score() {
-            const score = (this.total - this.points_missed) / this.total * 100;
-
-            return score;
+            return (this.total - this.points_missed) / this.total * 100;
         }
     }
 }
