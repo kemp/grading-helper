@@ -3,20 +3,20 @@
         <h1>Grading Helper</h1>
         <div style="margin-bottom: 2rem;">
             <label for="total">Points possible:</label><br>
-            <input id="total" v-model.number="total" type="number">
+            <input id="total" v-model.number="total" type="number" min="0">
         </div>
 
 
         <div style="margin-bottom: 2rem;">
             <label for="points_missed">Points missed:</label><br>
-            <input id="points_missed" v-model.number="points_missed" type="number">
+            <input id="points_missed" v-model.number="points_missed" type="number" min="0" :max="total">
         </div>
 
-        <div v-if="! isNaN(score)">
-            <h2>Final score: <span v-text="score"></span>%</h2>
+        <div v-if="isNaN(score) || !isFinite(score)">
+            <h2>Enter values above to calculate</h2>
         </div>
         <div v-else>
-            <h2>Enter values above to calculate</h2>
+            <h2>Final Score: <span v-text="score.toFixed(0)" :title="score"></span>%</h2>
         </div>
     </div>
 </template>
@@ -34,7 +34,7 @@ export default {
         score() {
             const score = (this.total - this.points_missed) / this.total * 100;
 
-            return score.toFixed(0);
+            return score;
         }
     }
 }
