@@ -51,7 +51,7 @@
                 <h2 class="font-bold">Enter values above to calculate</h2>
             </div>
             <div v-else-if="score < 0 || score > 100">
-                <h2 class="font-bold text-red-800">Score is not between zero and one hundred</h2>
+                <h2 class="font-bold text-red-800 text-sm">Score is not between zero and one hundred</h2>
             </div>
             <div v-else>
                 <h2 class="font-bold">

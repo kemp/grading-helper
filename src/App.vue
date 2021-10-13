@@ -17,7 +17,7 @@ export default {
 
 <style>
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
